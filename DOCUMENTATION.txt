@@ -1,0 +1,97 @@
+═══════════════════════════════════════════════════════════════════════════════
+                   DOCUMENTATION - STRUCTURED & ESSENTIAL
+═══════════════════════════════════════════════════════════════════════════════
+
+READ THESE IN ORDER:
+
+1. INDEX.md (START HERE)
+   - Overview of all documents
+   - Quick navigation
+   - File locations
+
+2. SETUP.md (MAIN SETUP GUIDE)
+   - Prerequisites
+   - Step 1-8 setup instructions
+   - Development workflow
+   - Troubleshooting
+
+3. docs/QUICKSTART.md (REFERENCE)
+   - Command-only reference
+   - Copy-paste terminals commands
+   - Example queries
+
+4. docs/ARCHITECTURE.md (UNDERSTANDING)
+   - System design
+   - Component overview
+   - How it works
+   - Data flow
+
+5. TROUBLESHOOTING.md (ERRORS)
+   - Common issues
+   - Solutions
+
+6. README.md (PROJECT OVERVIEW)
+   - What the system does
+   - Features
+   - Technology stack
+
+═══════════════════════════════════════════════════════════════════════════════
+
+QUICK SUMMARY:
+
+Your Project:  Intelligent Data Visualization System
+Language:      Python (backend) + React (frontend)
+Data:          OECD agricultural dataset
+Charts:        Line, Bar, Pie, Card
+NLP:           Query understanding + chart selection
+
+═══════════════════════════════════════════════════════════════════════════════
+
+FILES INCLUDED:
+
+Root Level:
+  ├── SETUP.md                    ← Main setup guide (start here)
+  ├── TROUBLESHOOTING.md          ← Common issues & fixes
+  ├── README.md                   ← Project overview
+  └── INDEX.md                    ← Document navigation
+
+Documentation Folder:
+  └── docs/
+      ├── QUICKSTART.md           ← Command reference
+      └── ARCHITECTURE.md         ← System design
+
+Code:
+  ├── backend/                    ← Python FastAPI
+  ├── app/                        ← React/Next.js
+  └── public/                     ← Static files
+
+═══════════════════════════════════════════════════════════════════════════════
+
+START HERE:
+
+1. Open INDEX.md
+2. Follow link to SETUP.md
+3. Complete all 8 steps
+4. Done!
+
+═══════════════════════════════════════════════════════════════════════════════
+
+BOTH TERMINALS NEEDED:
+
+Terminal 1 (Backend):
+  python -m venv venv
+  source venv/bin/activate  # or venv\Scripts\activate
+  pip install -r backend/requirements.txt
+  python -m uvicorn backend.api.main:app --host 0.0.0.0 --port 8000 --reload
+
+Terminal 2 (Frontend):
+  npm install
+  npm run dev
+
+Browser: http://localhost:3000
+
+═══════════════════════════════════════════════════════════════════════════════
+
+NO MORE EXTRA DOCS - ONLY ESSENTIAL FILES KEPT
+
+═══════════════════════════════════════════════════════════════════════════════

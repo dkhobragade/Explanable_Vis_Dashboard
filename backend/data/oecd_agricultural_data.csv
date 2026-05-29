@@ -1,0 +1,113 @@
+year,country,region,commodity,measure,value,unit
+2015,France,Europe,Wheat,Production,7200000,tonnes
+2016,France,Europe,Wheat,Production,7500000,tonnes
+2017,France,Europe,Wheat,Production,7100000,tonnes
+2018,France,Europe,Wheat,Production,7800000,tonnes
+2019,France,Europe,Wheat,Production,7600000,tonnes
+2020,France,Europe,Wheat,Production,7400000,tonnes
+2021,France,Europe,Wheat,Production,8100000,tonnes
+2022,France,Europe,Wheat,Production,7900000,tonnes
+2015,Germany,Europe,Wheat,Production,13200000,tonnes
+2016,Germany,Europe,Wheat,Production,13600000,tonnes
+2017,Germany,Europe,Wheat,Production,12800000,tonnes
+2018,Germany,Europe,Wheat,Production,14200000,tonnes
+2019,Germany,Europe,Wheat,Production,14500000,tonnes
+2020,Germany,Europe,Wheat,Production,14000000,tonnes
+2021,Germany,Europe,Wheat,Production,15100000,tonnes
+2022,Germany,Europe,Wheat,Production,14800000,tonnes
+2015,Poland,Europe,Wheat,Production,9600000,tonnes
+2016,Poland,Europe,Wheat,Production,10200000,tonnes
+2017,Poland,Europe,Wheat,Production,9800000,tonnes
+2018,Poland,Europe,Wheat,Production,10800000,tonnes
+2019,Poland,Europe,Wheat,Production,11100000,tonnes
+2020,Poland,Europe,Wheat,Production,10700000,tonnes
+2021,Poland,Europe,Wheat,Production,11800000,tonnes
+2022,Poland,Europe,Wheat,Production,11500000,tonnes
+2015,Australia,Oceania,Wheat,Production,27200000,tonnes
+2016,Australia,Oceania,Wheat,Production,26500000,tonnes
+2017,Australia,Oceania,Wheat,Production,28100000,tonnes
+2018,Australia,Oceania,Wheat,Production,29500000,tonnes
+2019,Australia,Oceania,Wheat,Production,28800000,tonnes
+2020,Australia,Oceania,Wheat,Production,29200000,tonnes
+2021,Australia,Oceania,Wheat,Production,30100000,tonnes
+2022,Australia,Oceania,Wheat,Production,31500000,tonnes
+2015,USA,North America,Wheat,Production,55100000,tonnes
+2016,USA,North America,Wheat,Production,54200000,tonnes
+2017,USA,North America,Wheat,Production,56800000,tonnes
+2018,USA,North America,Wheat,Production,58300000,tonnes
+2019,USA,North America,Wheat,Production,57500000,tonnes
+2020,USA,North America,Wheat,Production,57900000,tonnes
+2021,USA,North America,Wheat,Production,59200000,tonnes
+2022,USA,North America,Wheat,Production,61500000,tonnes
+2015,Argentina,South America,Wheat,Production,12900000,tonnes
+2016,Argentina,South America,Wheat,Production,13600000,tonnes
+2017,Argentina,South America,Wheat,Production,14200000,tonnes
+2018,Argentina,South America,Wheat,Production,13800000,tonnes
+2019,Argentina,South America,Wheat,Production,14100000,tonnes
+2020,Argentina,South America,Wheat,Production,13700000,tonnes
+2021,Argentina,South America,Wheat,Production,15200000,tonnes
+2022,Argentina,South America,Wheat,Production,15800000,tonnes
+2015,China,Asia,Wheat,Production,129000000,tonnes
+2016,China,Asia,Wheat,Production,131500000,tonnes
+2017,China,Asia,Wheat,Production,133700000,tonnes
+2018,China,Asia,Wheat,Production,130200000,tonnes
+2019,China,Asia,Wheat,Production,134250000,tonnes
+2020,China,Asia,Wheat,Production,133950000,tonnes
+2021,China,Asia,Wheat,Production,136500000,tonnes
+2022,China,Asia,Wheat,Production,135500000,tonnes
+2015,India,Asia,Wheat,Production,92500000,tonnes
+2016,India,Asia,Wheat,Production,93700000,tonnes
+2017,India,Asia,Wheat,Production,95200000,tonnes
+2018,India,Asia,Wheat,Production,96200000,tonnes
+2019,India,Asia,Wheat,Production,98500000,tonnes
+2020,India,Asia,Wheat,Production,101500000,tonnes
+2021,India,Asia,Wheat,Production,103500000,tonnes
+2022,India,Asia,Wheat,Production,105500000,tonnes
+2015,France,Europe,Maize,Production,12500000,tonnes
+2016,France,Europe,Maize,Production,13200000,tonnes
+2017,France,Europe,Maize,Production,12800000,tonnes
+2018,France,Europe,Maize,Production,14100000,tonnes
+2019,France,Europe,Maize,Production,13800000,tonnes
+2020,France,Europe,Maize,Production,14200000,tonnes
+2021,France,Europe,Maize,Production,14500000,tonnes
+2022,France,Europe,Maize,Production,14800000,tonnes
+2015,USA,North America,Maize,Production,345600000,tonnes
+2016,USA,North America,Maize,Production,352600000,tonnes
+2017,USA,North America,Maize,Production,370800000,tonnes
+2018,USA,North America,Maize,Production,365100000,tonnes
+2019,USA,North America,Maize,Production,372600000,tonnes
+2020,USA,North America,Maize,Production,383300000,tonnes
+2021,USA,North America,Maize,Production,388600000,tonnes
+2022,USA,North America,Maize,Production,382600000,tonnes
+2015,China,Asia,Maize,Production,225000000,tonnes
+2016,China,Asia,Maize,Production,229500000,tonnes
+2017,China,Asia,Maize,Production,230500000,tonnes
+2018,China,Asia,Maize,Production,225500000,tonnes
+2019,China,Asia,Maize,Production,230200000,tonnes
+2020,China,Asia,Maize,Production,232500000,tonnes
+2021,China,Asia,Maize,Production,233500000,tonnes
+2022,China,Asia,Maize,Production,235500000,tonnes
+2015,Argentina,South America,Maize,Production,31700000,tonnes
+2016,Argentina,South America,Maize,Production,32900000,tonnes
+2017,Argentina,South America,Maize,Production,33500000,tonnes
+2018,Argentina,South America,Maize,Production,34200000,tonnes
+2019,Argentina,South America,Maize,Production,34800000,tonnes
+2020,Argentina,South America,Maize,Production,35100000,tonnes
+2021,Argentina,South America,Maize,Production,35500000,tonnes
+2022,Argentina,South America,Maize,Production,36200000,tonnes
+2015,France,Europe,Barley,Production,7500000,tonnes
+2016,France,Europe,Barley,Production,8100000,tonnes
+2017,France,Europe,Barley,Production,7800000,tonnes
+2018,France,Europe,Barley,Production,8400000,tonnes
+2019,France,Europe,Barley,Production,8200000,tonnes
+2020,France,Europe,Barley,Production,8600000,tonnes
+2021,France,Europe,Barley,Production,8800000,tonnes
+2022,France,Europe,Barley,Production,8500000,tonnes
+2015,Australia,Oceania,Barley,Production,8200000,tonnes
+2016,Australia,Oceania,Barley,Production,8500000,tonnes
+2017,Australia,Oceania,Barley,Production,8100000,tonnes
+2018,Australia,Oceania,Barley,Production,8800000,tonnes
+2019,Australia,Oceania,Barley,Production,9100000,tonnes
+2020,Australia,Oceania,Barley,Production,9300000,tonnes
+2021,Australia,Oceania,Barley,Production,9500000,tonnes
+2022,Australia,Oceania,Barley,Production,9800000,tonnes

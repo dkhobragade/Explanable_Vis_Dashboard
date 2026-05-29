@@ -1,0 +1,261 @@
+═══════════════════════════════════════════════════════════════════════════════
+                    OCES DATA FORMAT - SYSTEM CONFIGURED
+═══════════════════════════════════════════════════════════════════════════════
+
+WHAT HAS BEEN DONE
+──────────────────────────────────────────────────────────────────────────────
+
+✓ Created backend/data/ folder
+✓ Added sample oces_data.csv with your exact columns
+✓ Updated data loader to auto-detect OCES format
+✓ Created column mapping configuration
+✓ Updated NLP parser with OCES column names
+✓ System now auto-normalizes your columns
+
+YOUR OCES COLUMNS
+──────────────────────────────────────────────────────────────────────────────
+
+The system recognizes these columns from your dataset:
+
+Key Columns (used for analysis):
+  • REF_AREA           → region/area
+  • COMMODITY          → product/commodity
+  • TIME_PERIOD        → year/time
+  • OBS_VALUE          → main metric/value
+  • MEASURE            → type of measurement
+  • UNIT_MEASURE       → unit code
+
+Metadata Columns (stored but not used for display):
+  • STRUCTURE
+  • STRUCTURE_ID
+  • ACTION
+  • FREQ (Frequency)
+  • VERSION_ID
+  • OBS_STATUS
+  • UNIT_MULT
+  • DECIMALS
+  • CONVENTION
+
+HOW THE SYSTEM HANDLES YOUR DATA
+──────────────────────────────────────────────────────────────────────────────
+
+Step 1: Load CSV
+  → Reads oces_data.csv from backend/data/
+  → Auto-detects OCES format by checking for OBS_VALUE column
+
+Step 2: Normalize Columns
+  → Maps your column names to internal system names:
+    - REF_AREA → region
+    - COMMODITY → product
+    - TIME_PERIOD → year
+    - OBS_VALUE → value
+
+Step 3: Type Conversion
+  → Converts TIME_PERIOD to numeric (years)
+  → Converts OBS_VALUE to numeric (floats for values)
+
+Step 4: Filter Invalid Data
+  → Removes rows with missing values or year/value
+  → Keeps only clean, usable data
+
+Step 5: Analysis Ready
+  → System can now group by region, product, year
+  → Can filter, aggregate, and visualize
+
+WHEN YOU UPLOAD YOUR LARGE CSV
+──────────────────────────────────────────────────────────────────────────────
+
+Your actual OCES data file should have these columns:
+
+Required columns:
+  • STRUCTURE
+  • STRUCTURE_ID
+  • STRUCTURE_NAME
+  • ACTION
+  • REF_AREA              (geographic area - we call this "region")
+  • Reference area
+  • FREQ
+  • Frequency of observation
+  • COMMODITY             (product - we call this "product")
+  • Commodity
+  • MEASURE               (type of metric)
+  • Measure
+  • UNIT_MEASURE
+  • Unit of measure
+  • VERSION_ID
+  • Version ID
+  • TIME_PERIOD           (year - we call this "year")
+  • Time period
+  • OBS_VALUE             (observation value - we call this "value") ← THE METRIC
+  • Observation value
+  • OBS_STATUS
+  • Observation status
+  • UNIT_MULT
+  • Unit multiplier
+  • DECIMALS
+  • Decimals
+  • CONVENTION
+  • Agricultural convention
+
+Steps to upload:
+
+1. Save your large CSV as: oces_data.csv
+   → Keep the filename exactly as: oces_data.csv
+   → Keep all columns in CSV
+   → Use UTF-8 encoding
+
+2. Place in: backend/data/
+   → Replace the sample file
+   → Keep backup in git/cloud
+
+3. Restart backend:
+   → Stop server (Ctrl+C)
+   → Run: python -m uvicorn backend.api.main:app --host 0.0.0.0 --port 8000 --reload
+   → Wait for "Application startup complete"
+
+4. System auto-adapts:
+   → Reads your OCES columns
+   → Normalizes internally
+   → Learns your data structure
+   → Ready for queries
+
+TEST YOUR DATA
+──────────────────────────────────────────────────────────────────────────────
+
+After uploading, run this test:
+
+  python backend/test_backend.py
+
+Shows:
+  ✓ Data loaded successfully
+  ✓ Row count from your file
+  ✓ Column names recognized
+  ✓ Column types detected
+  ✓ Sample data preview
+
+Then test in browser:
+
+  http://localhost:3000
+
+Try queries like:
+  • "Show wheat production trends"
+  • "Compare maize across countries"
+  • "What are the top rice producers?"
+
+If charts appear → SUCCESS!
+
+COLUMN MAPPING REFERENCE
+──────────────────────────────────────────────────────────────────────────────
+
+Your CSV              →  Internal Name  →  Used For
+────────────────────     ──────────────     ──────────
+REF_AREA               region             Grouping by area
+COMMODITY              product            Grouping by crop
+TIME_PERIOD            year               X-axis for trends
+OBS_VALUE              value              Y-axis / metric values
+MEASURE                measure            Label/legend
+
+WHAT USERS CAN QUERY
+──────────────────────────────────────────────────────────────────────────────
+
+With your OCES data, users can:
+
+By Product:
+  • "Show wheat production"
+  • "Compare maize and rice"
+  • "What about soybeans?"
+
+By Region:
+  • "USA production trends"
+  • "Europe vs North America"
+  • "Which country produces the most?"
+
+Over Time:
+  • "Production trends 2015-2019"
+  • "Year-over-year changes"
+  • "Historical comparison"
+
+Combinations:
+  • "Wheat production in USA over time"
+  • "Compare rice production across all regions"
+  • "Top 5 wheat producers by country"
+
+The NLP parser now understands:
+  ✓ Your column names (REF_AREA, COMMODITY, etc.)
+  ✓ Your data values (countries, crops, years)
+  ✓ Analysis intents (trends, comparisons, rankings)
+
+CONFIGURATION FILES
+──────────────────────────────────────────────────────────────────────────────
+
+Located in: backend/config/
+
+column_mapping.py:
+  • CSV_COLUMNS - Maps your columns to system names
+  • KEY_COLUMNS - Which columns to use for grouping
+  • COLUMN_ALIASES - What users might call these
+  • get_column_name() - Converts user input to CSV column
+
+Updated Files:
+  • backend/data_pipeline/loader.py - Loads & normalizes OCES format
+  • backend/nlp/parser.py - Recognizes OCES column names
+  • backend/data/oces_data.csv - Your sample data
+
+TROUBLESHOOTING
+──────────────────────────────────────────────────────────────────────────────
+
+Problem: "Column not found error"
+  → Check column name matches exactly (case-sensitive)
+  → Verify CSV has the column in first row
+  → Check for leading/trailing spaces
+
+Problem: "No data appears"
+  → Run: python backend/test_backend.py
+  → Check for errors in terminal
+  → Ensure OBS_VALUE column has numeric values
+
+Problem: "Charts not showing"
+  → Check browser console (F12) for errors
+  → Check backend terminal for red text
+  → Verify data rows with non-empty OBS_VALUE
+
+Problem: "Incorrect grouping/filtering"
+  → Check that region/product values match your CSV
+  → Verify column names in queries match data
+  → Ensure TIME_PERIOD is numeric
+
+NEXT STEPS
+──────────────────────────────────────────────────────────────────────────────
+
+1. Test with sample data first:
+   → Run system as-is
+   → Verify everything works
+   → Try example queries
+
+2. Prepare your large CSV:
+   → Ensure OCES format structure
+   → Verify column names match
+   → Check data quality
+
+3. Upload your CSV:
+   → Save as oces_data.csv
+   → Place in backend/data/
+   → Restart backend
+
+4. Test with your data:
+   → Run test_backend.py
+   → Try queries in browser
+   → Verify charts work
+
+5. Deploy when ready:
+   → To Vercel (frontend)
+   → To AWS/GCP/etc (backend)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+                    SYSTEM IS READY FOR YOUR OCES DATA
+
+         When your large CSV is ready, follow the upload steps above.
+                    The system will auto-adapt to your data.
+
+═══════════════════════════════════════════════════════════════════════════════

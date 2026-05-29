@@ -1,0 +1,620 @@
+{
+  "entities": {
+    "region:ARG": {
+      "id": "region:ARG",
+      "type": "region",
+      "value": "ARG",
+      "synonyms": []
+    },
+    "region:AUS": {
+      "id": "region:AUS",
+      "type": "region",
+      "value": "AUS",
+      "synonyms": []
+    },
+    "region:BRA": {
+      "id": "region:BRA",
+      "type": "region",
+      "value": "BRA",
+      "synonyms": []
+    },
+    "region:CAN": {
+      "id": "region:CAN",
+      "type": "region",
+      "value": "CAN",
+      "synonyms": []
+    },
+    "region:CHE": {
+      "id": "region:CHE",
+      "type": "region",
+      "value": "CHE",
+      "synonyms": []
+    },
+    "region:CHN": {
+      "id": "region:CHN",
+      "type": "region",
+      "value": "CHN",
+      "synonyms": []
+    },
+    "region:EU": {
+      "id": "region:EU",
+      "type": "region",
+      "value": "EU",
+      "synonyms": []
+    },
+    "region:JPN": {
+      "id": "region:JPN",
+      "type": "region",
+      "value": "JPN",
+      "synonyms": []
+    },
+    "region:KOR": {
+      "id": "region:KOR",
+      "type": "region",
+      "value": "KOR",
+      "synonyms": []
+    },
+    "region:MEX": {
+      "id": "region:MEX",
+      "type": "region",
+      "value": "MEX",
+      "synonyms": []
+    },
+    "region:NOR": {
+      "id": "region:NOR",
+      "type": "region",
+      "value": "NOR",
+      "synonyms": []
+    },
+    "region:NZL": {
+      "id": "region:NZL",
+      "type": "region",
+      "value": "NZL",
+      "synonyms": []
+    },
+    "region:RUS": {
+      "id": "region:RUS",
+      "type": "region",
+      "value": "RUS",
+      "synonyms": []
+    },
+    "region:USA": {
+      "id": "region:USA",
+      "type": "region",
+      "value": "USA",
+      "synonyms": []
+    },
+    "region:COL": {
+      "id": "region:COL",
+      "type": "region",
+      "value": "COL",
+      "synonyms": []
+    },
+    "region:EGY": {
+      "id": "region:EGY",
+      "type": "region",
+      "value": "EGY",
+      "synonyms": []
+    },
+    "region:ETH": {
+      "id": "region:ETH",
+      "type": "region",
+      "value": "ETH",
+      "synonyms": []
+    },
+    "region:IDN": {
+      "id": "region:IDN",
+      "type": "region",
+      "value": "IDN",
+      "synonyms": []
+    },
+    "region:IRN": {
+      "id": "region:IRN",
+      "type": "region",
+      "value": "IRN",
+      "synonyms": []
+    },
+    "region:ISR": {
+      "id": "region:ISR",
+      "type": "region",
+      "value": "ISR",
+      "synonyms": []
+    },
+    "region:KAZ": {
+      "id": "region:KAZ",
+      "type": "region",
+      "value": "KAZ",
+      "synonyms": []
+    },
+    "region:MYS": {
+      "id": "region:MYS",
+      "type": "region",
+      "value": "MYS",
+      "synonyms": []
+    },
+    "region:NGA": {
+      "id": "region:NGA",
+      "type": "region",
+      "value": "NGA",
+      "synonyms": []
+    },
+    "region:PAK": {
+      "id": "region:PAK",
+      "type": "region",
+      "value": "PAK",
+      "synonyms": []
+    },
+    "region:PER": {
+      "id": "region:PER",
+      "type": "region",
+      "value": "PER",
+      "synonyms": []
+    },
+    "region:PHL": {
+      "id": "region:PHL",
+      "type": "region",
+      "value": "PHL",
+      "synonyms": []
+    },
+    "region:PRY": {
+      "id": "region:PRY",
+      "type": "region",
+      "value": "PRY",
+      "synonyms": []
+    },
+    "region:SAU": {
+      "id": "region:SAU",
+      "type": "region",
+      "value": "SAU",
+      "synonyms": []
+    },
+    "region:THA": {
+      "id": "region:THA",
+      "type": "region",
+      "value": "THA",
+      "synonyms": []
+    },
+    "region:TUR": {
+      "id": "region:TUR",
+      "type": "region",
+      "value": "TUR",
+      "synonyms": []
+    },
+    "region:VNM": {
+      "id": "region:VNM",
+      "type": "region",
+      "value": "VNM",
+      "synonyms": []
+    },
+    "region:ZAF": {
+      "id": "region:ZAF",
+      "type": "region",
+      "value": "ZAF",
+      "synonyms": []
+    },
+    "region:W": {
+      "id": "region:W",
+      "type": "region",
+      "value": "W",
+      "synonyms": []
+    },
+    "region:A2": {
+      "id": "region:A2",
+      "type": "region",
+      "value": "A2",
+      "synonyms": []
+    },
+    "region:A8": {
+      "id": "region:A8",
+      "type": "region",
+      "value": "A8",
+      "synonyms": []
+    },
+    "region:E": {
+      "id": "region:E",
+      "type": "region",
+      "value": "E",
+      "synonyms": []
+    },
+    "region:O": {
+      "id": "region:O",
+      "type": "region",
+      "value": "O",
+      "synonyms": []
+    },
+    "region:F": {
+      "id": "region:F",
+      "type": "region",
+      "value": "F",
+      "synonyms": []
+    },
+    "region:S": {
+      "id": "region:S",
+      "type": "region",
+      "value": "S",
+      "synonyms": []
+    },
+    "region:DPGC": {
+      "id": "region:DPGC",
+      "type": "region",
+      "value": "DPGC",
+      "synonyms": []
+    },
+    "region:OECD": {
+      "id": "region:OECD",
+      "type": "region",
+      "value": "OECD",
+      "synonyms": []
+    },
+    "region:GBR": {
+      "id": "region:GBR",
+      "type": "region",
+      "value": "GBR",
+      "synonyms": []
+    },
+    "region:CHL": {
+      "id": "region:CHL",
+      "type": "region",
+      "value": "CHL",
+      "synonyms": []
+    },
+    "region:IND": {
+      "id": "region:IND",
+      "type": "region",
+      "value": "IND",
+      "synonyms": []
+    },
+    "region:UKR": {
+      "id": "region:UKR",
+      "type": "region",
+      "value": "UKR",
+      "synonyms": []
+    },
+    "region:DPDC": {
+      "id": "region:DPDC",
+      "type": "region",
+      "value": "DPDC",
+      "synonyms": []
+    },
+    "measure:ST": {
+      "id": "measure:ST",
+      "type": "measure",
+      "value": "ST",
+      "synonyms": []
+    },
+    "measure:QC": {
+      "id": "measure:QC",
+      "type": "measure",
+      "value": "QC",
+      "synonyms": []
+    },
+    "measure:ECOE_TOT": {
+      "id": "measure:ECOE_TOT",
+      "type": "measure",
+      "value": "ECOE_TOT",
+      "synonyms": []
+    },
+    "measure:FE": {
+      "id": "measure:FE",
+      "type": "measure",
+      "value": "FE",
+      "synonyms": []
+    },
+    "measure:FO": {
+      "id": "measure:FO",
+      "type": "measure",
+      "value": "FO",
+      "synonyms": []
+    },
+    "measure:QP_ET": {
+      "id": "measure:QP_ET",
+      "type": "measure",
+      "value": "QP_ET",
+      "synonyms": []
+    },
+    "measure:OU": {
+      "id": "measure:OU",
+      "type": "measure",
+      "value": "OU",
+      "synonyms": []
+    },
+    "measure:AH": {
+      "id": "measure:AH",
+      "type": "measure",
+      "value": "AH",
+      "synonyms": []
+    },
+    "measure:EX": {
+      "id": "measure:EX",
+      "type": "measure",
+      "value": "EX",
+      "synonyms": []
+    },
+    "measure:QP_BD": {
+      "id": "measure:QP_BD",
+      "type": "measure",
+      "value": "QP_BD",
+      "synonyms": []
+    },
+    "measure:PP": {
+      "id": "measure:PP",
+      "type": "measure",
+      "value": "PP",
+      "synonyms": []
+    },
+    "measure:FO_DFS_PROT": {
+      "id": "measure:FO_DFS_PROT",
+      "type": "measure",
+      "value": "FO_DFS_PROT",
+      "synonyms": []
+    },
+    "measure:QP": {
+      "id": "measure:QP",
+      "type": "measure",
+      "value": "QP",
+      "synonyms": []
+    },
+    "measure:FO_DFS_FAT": {
+      "id": "measure:FO_DFS_FAT",
+      "type": "measure",
+      "value": "FO_DFS_FAT",
+      "synonyms": []
+    },
+    "measure:FO_PC": {
+      "id": "measure:FO_PC",
+      "type": "measure",
+      "value": "FO_PC",
+      "synonyms": []
+    },
+    "measure:BF": {
+      "id": "measure:BF",
+      "type": "measure",
+      "value": "BF",
+      "synonyms": []
+    },
+    "measure:YLD": {
+      "id": "measure:YLD",
+      "type": "measure",
+      "value": "YLD",
+      "synonyms": []
+    },
+    "measure:FO_DES_TOT": {
+      "id": "measure:FO_DES_TOT",
+      "type": "measure",
+      "value": "FO_DES_TOT",
+      "synonyms": []
+    },
+    "measure:IM": {
+      "id": "measure:IM",
+      "type": "measure",
+      "value": "IM",
+      "synonyms": []
+    },
+    "measure:CI": {
+      "id": "measure:CI",
+      "type": "measure",
+      "value": "CI",
+      "synonyms": []
+    },
+    "measure:CR": {
+      "id": "measure:CR",
+      "type": "measure",
+      "value": "CR",
+      "synonyms": []
+    },
+    "measure:WP": {
+      "id": "measure:WP",
+      "type": "measure",
+      "value": "WP",
+      "synonyms": []
+    },
+    "unit:Tonnes": {
+      "id": "unit:Tonnes",
+      "type": "unit",
+      "value": "Tonnes",
+      "synonyms": []
+    },
+    "unit:Tonnes of CO2-equivalent": {
+      "id": "unit:Tonnes of CO2-equivalent",
+      "type": "unit",
+      "value": "Tonnes of CO2-equivalent",
+      "synonyms": []
+    },
+    "unit:Litres": {
+      "id": "unit:Litres",
+      "type": "unit",
+      "value": "Litres",
+      "synonyms": []
+    },
+    "unit:Hectares": {
+      "id": "unit:Hectares",
+      "type": "unit",
+      "value": "Hectares",
+      "synonyms": []
+    },
+    "unit:National currency per tonne": {
+      "id": "unit:National currency per tonne",
+      "type": "unit",
+      "value": "National currency per tonne",
+      "synonyms": []
+    },
+    "unit:Grammes per person per day": {
+      "id": "unit:Grammes per person per day",
+      "type": "unit",
+      "value": "Grammes per person per day",
+      "synonyms": []
+    },
+    "unit:Kilogrammes per person": {
+      "id": "unit:Kilogrammes per person",
+      "type": "unit",
+      "value": "Kilogrammes per person",
+      "synonyms": []
+    },
+    "unit:Tonnes per hectare": {
+      "id": "unit:Tonnes per hectare",
+      "type": "unit",
+      "value": "Tonnes per hectare",
+      "synonyms": []
+    },
+    "unit:Kilocalories per person per day": {
+      "id": "unit:Kilocalories per person per day",
+      "type": "unit",
+      "value": "Kilocalories per person per day",
+      "synonyms": []
+    },
+    "unit:National currency per hectolitre": {
+      "id": "unit:National currency per hectolitre",
+      "type": "unit",
+      "value": "National currency per hectolitre",
+      "synonyms": []
+    },
+    "unit:Animals": {
+      "id": "unit:Animals",
+      "type": "unit",
+      "value": "Animals",
+      "synonyms": []
+    },
+    "unit:Tonnes per animal": {
+      "id": "unit:Tonnes per animal",
+      "type": "unit",
+      "value": "Tonnes per animal",
+      "synonyms": []
+    },
+    "unit:US dollars per tonne": {
+      "id": "unit:US dollars per tonne",
+      "type": "unit",
+      "value": "US dollars per tonne",
+      "synonyms": []
+    },
+    "unit:US dollars per barrel": {
+      "id": "unit:US dollars per barrel",
+      "type": "unit",
+      "value": "US dollars per barrel",
+      "synonyms": []
+    },
+    "unit:US dollars per hectolitre": {
+      "id": "unit:US dollars per hectolitre",
+      "type": "unit",
+      "value": "US dollars per hectolitre",
+      "synonyms": []
+    }
+  },
+  "relationships": [
+    {
+      "source": "year:2030",
+      "target": "year:2029",
+      "type": "follows",
+      "weight": 1.0
+    }
+  ],
+  "dimensions": {
+    "region": {
+      "type": "dimension",
+      "cardinality": 46,
+      "values": [
+        "ARG",
+        "AUS",
+        "BRA",
+        "CAN",
+        "CHE",
+        "CHN",
+        "EU",
+        "JPN",
+        "KOR",
+        "MEX",
+        "NOR",
+        "NZL",
+        "RUS",
+        "USA",
+        "COL",
+        "EGY",
+        "ETH",
+        "IDN",
+        "IRN",
+        "ISR",
+        "KAZ",
+        "MYS",
+        "NGA",
+        "PAK",
+        "PER",
+        "PHL",
+        "PRY",
+        "SAU",
+        "THA",
+        "TUR",
+        "VNM",
+        "ZAF",
+        "W",
+        "A2",
+        "A8",
+        "E",
+        "O",
+        "F",
+        "S",
+        "DPGC",
+        "OECD",
+        "GBR",
+        "CHL",
+        "IND",
+        "UKR",
+        "DPDC"
+      ]
+    },
+    "measure": {
+      "type": "dimension",
+      "cardinality": 22,
+      "values": [
+        "ST",
+        "QC",
+        "ECOE_TOT",
+        "FE",
+        "FO",
+        "QP_ET",
+        "OU",
+        "AH",
+        "EX",
+        "QP_BD",
+        "PP",
+        "FO_DFS_PROT",
+        "QP",
+        "FO_DFS_FAT",
+        "FO_PC",
+        "BF",
+        "YLD",
+        "FO_DES_TOT",
+        "IM",
+        "CI",
+        "CR",
+        "WP"
+      ]
+    },
+    "unit": {
+      "type": "dimension",
+      "cardinality": 15,
+      "values": [
+        "Tonnes",
+        "Tonnes of CO2-equivalent",
+        "Litres",
+        "Hectares",
+        "National currency per tonne",
+        "Grammes per person per day",
+        "Kilogrammes per person",
+        "Tonnes per hectare",
+        "Kilocalories per person per day",
+        "National currency per hectolitre",
+        "Animals",
+        "Tonnes per animal",
+        "US dollars per tonne",
+        "US dollars per barrel",
+        "US dollars per hectolitre"
+      ]
+    }
+  },
+  "measures": {
+    "value": {
+      "type": "measure",
+      "data_type": "float",
+      "unit": "Tonnes"
+    }
+  }
+}

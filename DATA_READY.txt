@@ -1,0 +1,227 @@
+═══════════════════════════════════════════════════════════════════════════════
+                        DATA FOLDER SETUP - COMPLETE
+═══════════════════════════════════════════════════════════════════════════════
+
+YOUR DATA FOLDER IS READY
+─────────────────────────────────────────────────────────────────────────────
+
+Location: backend/data/
+
+Currently contains:
+  ✓ oces_data.csv (sample data with 40 rows - ready to replace)
+  ✓ oecd_agricultural_data.csv (backup/default)
+
+HOW IT WORKS
+─────────────────────────────────────────────────────────────────────────────
+
+The system looks for data in this order:
+  1. First checks for: oces_data.csv
+  2. If not found, uses: oecd_agricultural_data.csv
+  3. Loads with pandas
+  4. Auto-detects columns and data types
+  5. No code changes needed!
+
+SAMPLE DATA STRUCTURE
+─────────────────────────────────────────────────────────────────────────────
+
+Current oces_data.csv columns:
+  • id (unique identifier)
+  • region (geographic area)
+  • product (agricultural product)
+  • year (time period)
+  • area_hectares (land area)
+  • production_tonnes (output)
+  • yield_per_hectare (efficiency metric)
+
+Sample: 40 rows covering multiple regions, products, and years
+
+REPLACING WITH YOUR DATA
+─────────────────────────────────────────────────────────────────────────────
+
+When you upload your large CSV:
+
+1. Save as: oces_data.csv
+2. Place in: backend/data/
+3. System automatically:
+   ✓ Loads your data
+   ✓ Analyzes columns
+   ✓ Extracts metadata
+   ✓ Builds entity relationships
+   ✓ Ready for queries
+
+NO CODE CHANGES NEEDED!
+
+The data loader auto-adapts to your columns.
+
+YOUR CSV FILE SHOULD HAVE:
+─────────────────────────────────────────────────────────────────────────────
+
+✓ Headers in first row
+✓ Consistent data types per column
+✓ CSV format (comma-separated)
+✓ No special characters
+✓ Minimum 2 columns, 10+ rows
+
+GOOD COLUMN NAMES:
+  region, product, year, production_tonnes
+  
+BAD COLUMN NAMES:
+  Prod $$$, DATA-1, column_A
+
+TESTING YOUR DATA
+─────────────────────────────────────────────────────────────────────────────
+
+After uploading your file, run:
+  python backend/test_backend.py
+
+Shows:
+  ✓ Data loaded successfully
+  ✓ Row and column count
+  ✓ Column names and types
+  ✓ First 5 rows
+
+WHAT THE SYSTEM AUTOMATICALLY DOES
+─────────────────────────────────────────────────────────────────────────────
+
+Step 1: Load Data
+  → Reads your CSV file
+  → Detects encoding (UTF-8, etc.)
+  → Handles missing values
+
+Step 2: Extract Metadata
+  → Column names → become NLP entities
+  → Data types → inform chart selection
+  → Value ranges → constrain filters
+
+Step 3: Build Knowledge Graph
+  → Unique values become recognized entities
+  → Column relationships mapped
+  → Enables smarter queries
+
+Step 4: Train NLP Parser
+  → Learns your column names
+  → Recognizes data references
+  → Maps queries to columns
+
+Step 5: Adapt Recommender
+  → Analyzes column types
+  → Selects appropriate charts
+  → Generates recommendations
+
+All automatic. Zero configuration.
+
+WHEN YOU UPLOAD YOUR DATA
+─────────────────────────────────────────────────────────────────────────────
+
+Steps to follow:
+
+1. Prepare your CSV file
+   → Ensure proper CSV format
+   → Check headers are clear
+   → Verify data consistency
+
+2. Save as: oces_data.csv
+   → Keep exact filename
+   → UTF-8 encoding
+   → Save in root or temp folder
+
+3. Replace in backend/data/
+   → Copy to backend/data/
+   → Replace sample oces_data.csv
+   → Keep oecd_agricultural_data.csv as backup
+
+4. Restart backend
+   → Stop backend server (Ctrl+C)
+   → Run: python -m uvicorn backend.api.main:app --host 0.0.0.0 --port 8000 --reload
+   → Wait for "Application startup complete"
+
+5. Test in browser
+   → http://localhost:3000
+   → Try queries with your column names
+   → See charts with your data
+
+IMPORTANT NOTES
+─────────────────────────────────────────────────────────────────────────────
+
+✓ System auto-detects column types
+✓ No schema definition needed
+✓ Works with any CSV structure
+✓ Column names become NLP entities
+✓ Data types determine chart suggestions
+✓ All processing automatic
+
+TROUBLESHOOTING
+─────────────────────────────────────────────────────────────────────────────
+
+Issue: "Data file not found"
+→ Check file name is exactly: oces_data.csv
+→ Check location: backend/data/
+→ Check file is readable
+
+Issue: "CSV parsing error"
+→ Open file in text editor
+→ Check for special characters
+→ Verify comma-separated format
+→ Try in Excel first
+
+Issue: "No data appears"
+→ Check backend log for errors
+→ Run: python backend/test_backend.py
+→ Check column names in queries
+
+LARGE FILE HANDLING
+─────────────────────────────────────────────────────────────────────────────
+
+Your large CSV will be handled automatically.
+
+Process:
+1. Upload/copy to backend/data/oces_data.csv
+2. System loads into memory
+3. Pandas processes efficiently
+4. Auto-detects types
+5. Ready for queries
+
+No special handling needed.
+
+CURRENT SAMPLE DATA
+─────────────────────────────────────────────────────────────────────────────
+
+What's in oces_data.csv right now:
+
+Regions:  North America, Europe, Asia, South America, Africa
+Products: Wheat, Maize, Rice, Barley, Soybeans
+Years:    2015, 2016, 2017, 2018, 2019
+Rows:     40 (sample data)
+
+This is ready to test the system.
+
+WHEN READY:
+─────────────────────────────────────────────────────────────────────────────
+
+1. Upload your real CSV file
+2. Name it: oces_data.csv
+3. Place in: backend/data/
+4. Restart backend
+5. Done!
+
+System auto-adapts to your data structure.
+
+DOCUMENTATION
+─────────────────────────────────────────────────────────────────────────────
+
+For detailed guidance: Read DATA_SETUP.md
+
+Shows:
+  • File replacement steps
+  • Data requirements
+  • Troubleshooting
+  • Best practices
+  • Column naming
+
+═══════════════════════════════════════════════════════════════════════════════
+
+                    DATA FOLDER READY FOR YOUR FILE
+
+              When ready, replace oces_data.csv with your data
+
+═══════════════════════════════════════════════════════════════════════════════

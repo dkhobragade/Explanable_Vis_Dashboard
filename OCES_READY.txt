@@ -1,0 +1,301 @@
+═══════════════════════════════════════════════════════════════════════════════
+                    ✓ SYSTEM CONFIGURED FOR OCES DATA
+═══════════════════════════════════════════════════════════════════════════════
+
+STATUS: READY FOR YOUR DATA
+──────────────────────────────────────────────────────────────────────────────
+
+✓ Data folder created:          backend/data/
+✓ Sample OCES data added:       backend/data/oces_data.csv
+✓ Data loader updated:          Auto-detects OCES format
+✓ NLP parser updated:           Recognizes your columns
+✓ Column mapping configured:    backend/config/column_mapping.py
+✓ Auto-normalization enabled:   Your columns mapped to system
+
+SAMPLE DATA
+──────────────────────────────────────────────────────────────────────────────
+
+Your sample oces_data.csv contains:
+
+  Columns: 28 (exactly your format)
+  Rows: 45 (sample agricultural data)
+  
+  Key columns:
+    • REF_AREA (USA, Canada, Mexico, Europe, China, India, Brazil, Argentina)
+    • COMMODITY (Wheat, Maize, Rice)
+    • TIME_PERIOD (2015-2019)
+    • OBS_VALUE (production quantities)
+
+  Ready to replace with your large dataset
+
+FILES MODIFIED
+──────────────────────────────────────────────────────────────────────────────
+
+1. backend/data_pipeline/loader.py
+   ✓ Auto-detects OCES format (checks for OBS_VALUE column)
+   ✓ Normalizes column names to system format
+   ✓ Converts TIME_PERIOD to numeric years
+   ✓ Converts OBS_VALUE to numeric values
+   ✓ Filters out invalid data rows
+
+2. backend/nlp/parser.py
+   ✓ Added OCES column names to recognized entities
+   ✓ Learns your column names from metadata
+   ✓ Maps user queries to your data structure
+
+3. backend/config/column_mapping.py (NEW)
+   ✓ Maps OCES columns to system columns
+   ✓ Defines key columns for analysis
+   ✓ Provides column aliases for NLP
+   ✓ Auto-normalizes data types
+
+YOUR OCES COLUMNS RECOGNIZED
+──────────────────────────────────────────────────────────────────────────────
+
+STRUCTURE                    → structure
+STRUCTURE_ID                 → structure_id
+STRUCTURE_NAME               → structure_name
+ACTION                       → action
+REF_AREA                     → region          [GROUPING KEY]
+Reference area               → region_name
+FREQ                         → frequency
+Frequency of observation     → frequency_name
+COMMODITY                    → product         [GROUPING KEY]
+Commodity                    → product_name
+MEASURE                      → measure
+Measure                      → measure_name
+UNIT_MEASURE                 → unit_code
+Unit of measure              → unit_name
+VERSION_ID                   → version_id
+Version ID                   → version_name
+TIME_PERIOD                  → year            [GROUPING KEY]
+Time period                  → year_name
+OBS_VALUE                    → value           [METRIC KEY]
+Observation value            → value_name
+OBS_STATUS                   → obs_status
+Observation status           → obs_status_name
+UNIT_MULT                    → unit_mult
+Unit multiplier              → unit_mult_name
+DECIMALS                     → decimals
+Decimals                     → decimals_name
+CONVENTION                   → convention
+Agricultural convention      → convention_name
+
+SYSTEM WILL AUTOMATICALLY:
+──────────────────────────────────────────────────────────────────────────────
+
+1. Load Your CSV
+   → Reads oces_data.csv
+   → Detects OCES format by OBS_VALUE column
+   → Loads all rows into memory
+
+2. Normalize Columns
+   → REF_AREA → region (for geographic grouping)
+   → COMMODITY → product (for crop/commodity grouping)
+   → TIME_PERIOD → year (for temporal analysis)
+   → OBS_VALUE → value (the metric to visualize)
+
+3. Type Conversion
+   → year: string → integer (2015, 2016, etc.)
+   → value: string → float (production quantities)
+   → regions/products: string → text (for labels)
+
+4. Data Cleaning
+   → Remove rows with missing year
+   → Remove rows with missing value
+   → Keep only rows with valid OBS_VALUE
+
+5. Ready for Queries
+   → Users ask: "Show wheat production"
+   → System finds: product='Wheat' in COMMODITY column
+   → Returns visualization with your data
+
+HOW TO DEPLOY YOUR DATA
+──────────────────────────────────────────────────────────────────────────────
+
+When your large CSV is ready:
+
+STEP 1: Prepare CSV
+  • Format: CSV (comma-separated values)
+  • Encoding: UTF-8
+  • Filename: oces_data.csv (exact name)
+  • Columns: Must match your OCES structure
+
+STEP 2: Upload/Copy
+  • Save as: oces_data.csv
+  • Location: backend/data/
+  • Replace: The sample oces_data.csv
+  • Keep: oecd_agricultural_data.csv as backup
+
+STEP 3: Restart Backend
+  Terminal 1 (stop current):
+    Ctrl+C
+
+  Terminal 1 (start new):
+    python -m uvicorn backend.api.main:app --host 0.0.0.0 --port 8000 --reload
+    
+  Wait for: "Application startup complete"
+
+STEP 4: Verify
+  In new terminal:
+    python backend/test_backend.py
+  
+  Should show:
+    ✓ Data loaded successfully
+    ✓ Rows: [your row count]
+    ✓ Columns: [your column list]
+    ✓ First 5 rows of your data
+
+STEP 5: Test in Browser
+  http://localhost:3000
+  
+  Try queries:
+    • "Show wheat production trends"
+    • "Compare regions"
+    • "What about commodities?"
+
+TESTING BEFORE UPLOADING LARGE FILE
+──────────────────────────────────────────────────────────────────────────────
+
+First, test the system with sample data:
+
+Terminal 1 (Backend):
+  python -m venv venv
+  source venv/bin/activate  # or venv\Scripts\activate on Windows
+  pip install -r backend/requirements.txt
+  python -m uvicorn backend.api.main:app --host 0.0.0.0 --port 8000 --reload
+
+Terminal 2 (Frontend):
+  npm install
+  npm run dev
+
+Browser:
+  http://localhost:3000
+
+Try sample queries:
+  • "Show wheat production"
+  • "Compare countries"
+  • "Production trends over time"
+
+If everything works → READY FOR YOUR DATA!
+
+If errors appear → Read TROUBLESHOOTING section below
+
+COLUMN REQUIREMENTS FOR YOUR CSV
+──────────────────────────────────────────────────────────────────────────────
+
+Must have (exactly these column names):
+
+CRITICAL COLUMNS (must be present):
+  • REF_AREA (geographic code/region)
+  • COMMODITY (product/crop code)
+  • TIME_PERIOD (year as number)
+  • OBS_VALUE (the actual data/quantity)
+
+RECOMMENDED COLUMNS (should have):
+  • MEASURE (what you're measuring - "Production", "Area", "Yield")
+  • UNIT_MEASURE (units - "MT", "Ha", etc.)
+  • Frequency of observation (usually "A" for Annual)
+
+OPTIONAL COLUMNS (nice to have):
+  • All the other columns (metadata, version info, etc.)
+  • System will use available columns
+
+DATA QUALITY
+──────────────────────────────────────────────────────────────────────────────
+
+For best results, ensure:
+
+✓ No empty rows between data rows
+✓ Consistent column order (headers in row 1)
+✓ No special characters in data values
+✓ TIME_PERIOD contains only numeric years
+✓ OBS_VALUE contains numeric values (no text)
+✓ REF_AREA contains geographic identifiers
+✓ COMMODITY contains product codes/names
+
+Example good rows:
+  USA, Wheat, 2019, 50000000, Production, MT
+  CAN, Maize, 2018, 15000000, Production, MT
+
+Example bad rows:
+  , , , , ,              ← empty row
+  USA, "Wheat", 2019, $50,000,000, Prod%, MT  ← special chars/currency
+
+TROUBLESHOOTING
+──────────────────────────────────────────────────────────────────────────────
+
+Issue: "ModuleNotFoundError: No module named 'config'"
+Solution:
+  • Ensure backend/config/ folder exists
+  • Verify __init__.py is in the folder
+  • Restart Python/terminal
+
+Issue: "KeyError: OBS_VALUE"
+Solution:
+  • Check your CSV has exactly "OBS_VALUE" column
+  • Check spelling and case
+  • Verify first row is headers
+
+Issue: "No data showing in browser"
+Solution:
+  • Run: python backend/test_backend.py
+  • Check terminal output for errors
+  • Verify data folder has oces_data.csv
+  • Check CSV file is readable/not corrupted
+
+Issue: "Charts appear but with wrong data"
+Solution:
+  • Check that regions/products match your CSV
+  • Verify column mappings in column_mapping.py
+  • Ensure OBS_VALUE has numeric data
+
+DEPLOYMENT CHECKLIST
+──────────────────────────────────────────────────────────────────────────────
+
+Before deploying to production:
+
+Data:
+  ☐ Your large CSV prepared and tested
+  ☐ Verified data quality (no empty rows, valid numbers)
+  ☐ Backed up original file
+  ☐ File saved as oces_data.csv
+
+Code:
+  ☐ All files unchanged except data
+  ☐ No errors in terminal
+  ☐ test_backend.py passes
+  ☐ Charts display in browser
+
+Testing:
+  ☐ Tested with sample data
+  ☐ Tested with your actual large CSV
+  ☐ Multiple queries tested
+  ☐ All chart types working
+
+Ready to deploy:
+  ☐ Frontend to Vercel
+  ☐ Backend to AWS/GCP/Azure/Heroku
+  ☐ Database backups taken
+  ☐ Monitoring set up
+
+NEXT STEPS
+──────────────────────────────────────────────────────────────────────────────
+
+NOW:
+  1. Read OCES_DATA_SETUP.txt (detailed guide)
+  2. Test system with sample data
+  3. Verify everything works
+
+WHEN READY:
+  4. Prepare your large OCES CSV
+  5. Test in backend with: python backend/test_backend.py
+  6. Deploy to production
+
+═══════════════════════════════════════════════════════════════════════════════
+
+          YOUR SYSTEM IS READY FOR OCES AGRICULTURAL DATA
+
+         See OCES_DATA_SETUP.txt for detailed instructions
+
+═══════════════════════════════════════════════════════════════════════════════
