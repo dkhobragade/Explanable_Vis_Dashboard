@@ -53,6 +53,10 @@ export function BarChart({ data, fields, horizontal }: BarChartProps) {
     return cleanedRow;
   });
 
+  const chartMargin = horizontal
+    ? { left: 100, right: 20, top: 20, bottom: 20 }
+    : { bottom: 60, left: 80, right: 20, top: 20 };
+
   return (
     <div className="bg-slate-800 rounded-lg border border-slate-700 p-6">
       <h3 className="text-lg font-semibold text-white mb-4">Comparison</h3>
@@ -60,7 +64,7 @@ export function BarChart({ data, fields, horizontal }: BarChartProps) {
         <RechartsBarChart
           data={cleanedData}
           layout={horizontal ? 'vertical' : 'horizontal'}
-          margin={horizontal ? { left: 100, right: 20, top: 20, bottom: 20 } : { bottom: 60, left: 20, right: 20, top: 20 }}
+          margin={chartMargin}
         >
           <CartesianGrid strokeDasharray="3 3" stroke="#475569" />
           {!horizontal && (
@@ -80,9 +84,10 @@ export function BarChart({ data, fields, horizontal }: BarChartProps) {
             />
           )}
           {!horizontal && (
-            <YAxis 
-              type="number" 
+            <YAxis
+              type="number"
               stroke="#94a3b8"
+              width={80}
             />
           )}
           {horizontal && (
