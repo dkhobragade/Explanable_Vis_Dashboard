@@ -46,7 +46,8 @@ class RecommendationPipeline:
         chart_type, confidence, rule_reason = self.recommender.recommend(
             selected_fields=selected_fields,
             temporal_field=temporal_field,
-            intent=intent
+            intent=intent,
+            analysis=analysis
         )
         
         # Filter data based on filters in query
@@ -112,16 +113,22 @@ class RecommendationPipeline:
                 fields.append('region')
             elif entity_type == 'country' and 'country' not in fields:
                 fields.append('country')
-            elif entity_type == 'commodity' and 'commodity' not in fields:
-                fields.append('commodity')
+            elif entity_type == 'commodity' and 'product' not in fields:
+                fields.append('product')
             elif entity_type == 'measure' and 'measure' not in fields:
                 fields.append('measure')
         
+        # Fallback on explicit query wording for generic region/commodity requests
+        original_query = parsed_query.get('original_query', '').lower()
+        if 'region' in original_query and 'region' not in fields and 'country' not in fields:
+            fields.append('region')
+        if 'commodity' in original_query and 'product' not in fields:
+            fields.append('product')
+
         # Validate fields exist in dataframe
         fields = [f for f in fields if f in self.df.columns]
-        
         return fields
-    
+
     def _find_temporal_field(self, fields: List[str]) -> str:
         """Find the temporal field in the selected fields."""
         temporal_candidates = ['year', 'date', 'time', 'month']
@@ -129,7 +136,7 @@ class RecommendationPipeline:
             if any(t in field.lower() for t in temporal_candidates):
                 return field
         return None
-    
+
     def _apply_filters(self, df, filters: Dict) -> Any:
         """
         Apply filter conditions to dataframe.
@@ -206,8 +213,12 @@ class RecommendationPipeline:
         elif 'country' in fields:
             grouped = df.groupby('country')['value'].sum().reset_index()
             return grouped.to_dict('records')
-        elif 'commodity' in fields:
-            grouped = df.groupby('commodity')['value'].sum().reset_index()
+        elif 'commodity' in fields or 'product' in fields:
+            group_field = 'commodity' if 'commodity' in fields else 'product'
+            grouped = df.groupby(group_field)['value'].sum().reset_index()
+            # normalize column name to 'product' for frontend consistency
+            if group_field == 'commodity':
+                grouped = grouped.rename(columns={'commodity': 'product'})
             return grouped.to_dict('records')
         else:
             # Single metric

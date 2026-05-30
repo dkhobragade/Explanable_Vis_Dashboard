@@ -90,7 +90,8 @@ class ChartRecommender:
     def recommend(self, 
                  selected_fields: List[str],
                  temporal_field: str = None,
-                 intent: str = None) -> Tuple[ChartType, float, str]:
+                 intent: str = None,
+                 analysis: Dict[str, List[str]] = None) -> Tuple[ChartType, float, str]:
         """
         Recommend a chart type based on selected fields and intent.
         
@@ -104,10 +105,15 @@ class ChartRecommender:
         """
         print(f"[Chart Recommender] Recommending chart for fields: {selected_fields}")
         
-        # Count temporal and metric fields
-        temporal_count = 1 if temporal_field else 0
-        metric_count = len(selected_fields) - temporal_count
-        categorical_count = len(selected_fields) - metric_count - temporal_count
+        # Count temporal, metric, and categorical fields using analysis when available
+        if analysis:
+            metric_count = len(analysis.get('metric_fields', []))
+            categorical_count = len(analysis.get('categorical_fields', []))
+            temporal_count = len(analysis.get('temporal_fields', []))
+        else:
+            temporal_count = 1 if temporal_field else 0
+            metric_count = len(selected_fields) - temporal_count
+            categorical_count = len(selected_fields) - metric_count - temporal_count
         
         # Rule 1: Time series (temporal + metric)
         if temporal_count > 0 and metric_count == 1:
@@ -133,7 +139,7 @@ class ChartRecommender:
                     recommendation['reason']
                 )
         
-        # Rule 3: Categorical comparison (category + single metric)
+        # Rule 4: Categorical comparison (category + single metric)
         if metric_count == 1 and categorical_count > 0 and temporal_count == 0:
             recommendation = self.CHART_RULES.get(('categorical', 'single_metric'))
             if recommendation:

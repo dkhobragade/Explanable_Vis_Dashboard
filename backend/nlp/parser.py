@@ -76,6 +76,7 @@ class QueryParser:
         QueryIntent.COMPARE: [
             r'(\bcompare|versus|vs|against|difference|relative|between|among)\b',
             r'(\bhow does .+ compare|similarity|contrast)\b',
+            r'(\boutperform|outperforming|outperforms|outform|beat|beats|better|best)\b',
         ],
         QueryIntent.RANK: [
             r'(\btop|bottom|highest|lowest|ranked|leader|best|worst|ranking)\b',
@@ -252,6 +253,22 @@ class QueryParser:
                             'confidence': 0.9
                         })
         
+        # Fallback generic entity matching for region/commodity phrases
+        if 'region' in query_lower or 'regions' in query_lower or 'each region' in query_lower or 'respective region' in query_lower or 'per region' in query_lower:
+            entities.append({
+                'type': 'region',
+                'value': 'Region',
+                'original': 'region',
+                'confidence': 0.7
+            })
+        if 'commodity' in query_lower or 'commodities' in query_lower or 'crop' in query_lower or 'crops' in query_lower:
+            entities.append({
+                'type': 'commodity',
+                'value': 'Commodity',
+                'original': 'commodity',
+                'confidence': 0.7
+            })
+
         return entities
     
     def _extract_temporal(self, query: str) -> str:
