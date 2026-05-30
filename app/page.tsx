@@ -177,6 +177,8 @@ export default function Home() {
                   explanation={recommendation.explanation}
                   confidence={recommendation.confidence}
                   chartType={recommendation.chart_type}
+                  fields={recommendation.fields}
+                  temporalField={recommendation.temporal_field}
                 />
 
                 {/* Chart Display */}
