@@ -93,6 +93,10 @@ async def get_example_queries():
                 "description": "Ranking of regions by wheat production"
             },
             {
+                "query": "Which commodity outperform in the respective region from the available commodity",
+                "description": "Show which commodity outperforms others within each region"
+            },
+            {
                 "query": "Show production breakdown by commodity",
                 "description": "Pie chart showing proportion of different crops"
             },
