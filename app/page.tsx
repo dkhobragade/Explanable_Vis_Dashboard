@@ -134,6 +134,14 @@ export default function Home() {
                         • What are the top wheat producing regions?
                       </button>
                     </li>
+                    <li>
+                      <button
+                        onClick={() => handleQuery('Which commodity outperform in the respective region from the available commodity')}
+                        className="text-sm text-blue-400 hover:text-blue-300 text-left w-full"
+                      >
+                        • Which commodity outperform in the respective region from the available commodity
+                      </button>
+                    </li>
                     
                   </ul>
                 </div>
