@@ -88,19 +88,19 @@ Open http://localhost:3000 in your browser.
 
 Try these natural language queries:
 
-- **"Show wheat production trends over time"** 
+- **"Show wheat production trends over time"**
   → Line chart with temporal trends
-  
-- **"Compare maize production across countries"** 
+
+- **"Compare maize production across countries"**
   → Bar chart comparing nations
-  
-- **"What are the top wheat producing regions?"** 
+
+- **"What are the top wheat producing regions?"**
   → Ranked horizontal bar chart
-  
-- **"Show production breakdown by commodity"** 
+
+- **"Show production breakdown by commodity"**
   → Pie chart with proportions
-  
-- **"Wheat production in USA vs Europe"** 
+
+- **"Wheat production in USA vs Europe"**
   → Side-by-side comparison
 
 ## Technology Stack
@@ -358,3 +358,5 @@ This is a demonstration project. Feel free to use and modify for your needs.
 ---
 
 **Built with ❤️ using Python, React, and FastAPI**
+
+hello
