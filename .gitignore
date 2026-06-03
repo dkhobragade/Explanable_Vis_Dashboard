@@ -14,3 +14,4 @@ node_modules
 .next/
 .DS_Store__pycache__/
 *.pyc
+backend/data/oces_data_large.csv
